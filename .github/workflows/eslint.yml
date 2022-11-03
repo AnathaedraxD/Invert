@@ -9,7 +9,7 @@
 
 name: ESLint
 
-on:Invert
+on: Install
   push:
     branches: [ "main" ]
   pull_request:
