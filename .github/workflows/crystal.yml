@@ -1,0 +1,23 @@
+name: Crystal CI
+
+on: Invert 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+git config --global core.editor "code --wait"
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: shards install
+    - name: Run tests
+      run: crystal spec
